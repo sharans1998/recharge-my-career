@@ -23,7 +23,7 @@ export function ContactCta() {
 
   return (
     <section className="w-full border-t">
-      <div className="container px-4 md:px-6 py-12 md:py-16">
+      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="grid items-center gap-6 md:grid-cols-2">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">

@@ -7,7 +7,7 @@ export function HomeHero() {
   return (
     <section className="w-full">
       <div className="relative overflow-hidden">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid items-center gap-8 py-14 md:py-20 lg:grid-cols-[1.2fr_1fr]">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">
