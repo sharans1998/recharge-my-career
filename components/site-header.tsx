@@ -1,0 +1,86 @@
+"use client"
+
+import Link from "next/link"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Briefcase, Menu, X } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+const NAV = [
+  { name: "Home", href: "/" },
+  { name: "My Story", href: "/my-story" },
+  { name: "Services", href: "/services" },
+  { name: "Videos", href: "/videos" },
+  { name: "Blog", href: "/blog" },
+]
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        <Link href="/" className="flex items-center gap-2">
+          <Briefcase className="h-5 w-5" aria-hidden="true" />
+          <span className="font-medium">Career Strategising</span>
+          <span className="sr-only">Home</span>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-6">
+          {NAV.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {item.name}
+            </Link>
+          ))}
+          <Link href="mailto:hello@example.com">
+            <Button size="sm">Book a call</Button>
+          </Link>
+        </nav>
+
+        {/* Mobile controls */}
+        <div className="md:hidden">
+          <Button
+            variant="outline"
+            size="icon"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile nav panel */}
+      <div
+        id="mobile-nav"
+        className={cn(
+          "md:hidden border-t px-4 pb-4 pt-2 transition-[max-height] overflow-hidden",
+          open ? "max-h-96" : "max-h-0",
+        )}
+      >
+        <nav className="grid gap-2">
+          {NAV.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="rounded-md px-2 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
+              onClick={() => setOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <Link href="mailto:hello@example.com" onClick={() => setOpen(false)}>
+            <Button className="w-full">Book a call</Button>
+          </Link>
+        </nav>
+      </div>
+    </header>
+  )
+}
