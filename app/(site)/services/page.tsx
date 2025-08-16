@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Check, Target, Rocket, Gauge, Handshake } from "lucide-react"
 import Link from "next/link"
+import { ContactCta } from "@/components/contact-cta"
 
 export const metadata: Metadata = {
   title: "Services — Career Strategising",
@@ -74,8 +75,9 @@ const services: Service[] = [
 
 export default function Page() {
   return (
+    <>
     <section className="w-full py-12 md:py-20">
-      <div className="container max-w-6xl px-4 md:px-6">
+      <div className="container mx-auto max-w-6xl px-4 md:px-6">
         <div className="mb-10 space-y-3 text-center">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Services</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -112,18 +114,9 @@ export default function Page() {
             )
           })}
         </div>
-
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link href="mailto:hello@example.com" className="w-full sm:w-auto">
-            <Button className="w-full">Book a consultation</Button>
-          </Link>
-          <Link href="/my-story" className="w-full sm:w-auto">
-            <Button variant="outline" className="w-full bg-transparent">
-              About Satish
-            </Button>
-          </Link>
-        </div>
       </div>
     </section>
+    <ContactCta />
+    </>
   )
 }

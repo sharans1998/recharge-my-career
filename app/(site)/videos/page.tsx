@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { VideoCard } from "@/components/video-card"
+import { ContactCta } from "@/components/contact-cta"
 
 export const metadata: Metadata = {
   title: "Videos — Career Strategising",
@@ -17,8 +18,9 @@ const videos = [
 
 export default function Page() {
   return (
+    <>
     <section className="w-full py-12 md:py-20">
-      <div className="container max-w-6xl px-4 md:px-6">
+      <div className="container mx-auto max-w-6xl px-4 md:px-6">
         <div className="mb-10 space-y-3 text-center">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Videos</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -33,5 +35,7 @@ export default function Page() {
         </div>
       </div>
     </section>
+    <ContactCta />
+    </>
   )
 }

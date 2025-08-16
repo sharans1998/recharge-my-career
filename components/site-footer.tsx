@@ -10,7 +10,7 @@ const LINKS = [
 export function SiteFooter() {
   return (
     <footer className="border-t">
-      <div className="container px-4 md:px-6 py-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+      <div className="container mx-auto px-4 md:px-6 py-8 flex flex-col gap-4 sm:flex-row sm:items-center">
         <div className="text-sm text-muted-foreground">
           {"© "}
           {new Date().getFullYear()} <span className="text-foreground">Career Strategising</span>. All rights reserved.
