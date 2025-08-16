@@ -1,33 +1,15 @@
 import type { Metadata } from "next"
 import { BlogCard } from "@/components/blog-card"
 import { ContactCta } from "@/components/contact-cta"
+import { getSortedPostsData } from "@/lib/posts"
 
 export const metadata: Metadata = {
   title: "Blog — Career Strategising",
 }
 
-const posts = [
-  {
-    title: "The Three Lenses of Career Clarity",
-    excerpt: "When you separate strengths, values, and constraints, decisions become simpler—and more durable.",
-    date: "2025-06-01",
-    imageQuery: "minimal%20workspace%20with%20notebook",
-  },
-  {
-    title: "Story Before Strategy",
-    excerpt: "If your narrative isn’t clear, your plan will be noisy. Here’s how to fix that in under an hour.",
-    date: "2025-05-15",
-    imageQuery: "calm%20desk%20and%20pen%20closeup",
-  },
-  {
-    title: "Interview Structure That Works",
-    excerpt: "Use simple patterns to frame persuasive, memorable answers without sounding rehearsed.",
-    date: "2025-04-20",
-    imageQuery: "subtle%20abstract%20texture%20neutrals",
-  },
-]
-
 export default function Page() {
+  const posts = getSortedPostsData()
+
   return (
     <>
     <section className="w-full py-12 md:py-20">
@@ -42,12 +24,11 @@ export default function Page() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <BlogCard
-              key={p.title}
+              key={p.id}
               title={p.title}
               excerpt={p.excerpt}
               date={p.date}
-              imageQuery={p.imageQuery}
-              href="#"
+              href={`/blog/${p.id}`}
             />
           ))}
         </div>
