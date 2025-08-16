@@ -61,8 +61,8 @@ export function SiteHeader() {
       <div
         id="mobile-nav"
         className={cn(
-          "md:hidden border-t px-4 pb-4 pt-2 transition-[max-height] overflow-hidden",
-          open ? "max-h-96" : "max-h-0",
+          "md:hidden border-t px-4 transition-[max-height] overflow-hidden",
+          open ? "max-h-96 py-4" : "max-h-0",
         )}
       >
         <nav className="grid gap-2">
