@@ -28,10 +28,15 @@ export function HomeHero() {
                   href="mailto:hello@example.com"
                   className="w-full sm:w-auto"
                 >
-                  <Button className="w-full">Book a consultation</Button>
+                  <Button className="w-full cursor-pointer">
+                    Book a consultation
+                  </Button>
                 </Link>
                 <Link href="/services" className="w-full sm:w-auto">
-                  <Button variant="outline" className="w-full bg-transparent">
+                  <Button
+                    variant="outline"
+                    className="w-full bg-transparent cursor-pointer"
+                  >
                     Explore services
                   </Button>
                 </Link>
@@ -56,11 +61,12 @@ export function HomeHero() {
             </div>
             <div className="relative">
               <Image
-                src="/minimal-abstract-neutrals.png"
+                src="https://res.cloudinary.com/dyb4kpthp/image/upload/v1756294318/satish-01_dqzngx.jpg"
                 alt="Abstract minimal shapes symbolizing clarity"
                 width={700}
                 height={700}
-                className="w-full rounded-xl border bg-muted object-cover aspect-square"
+                priority
+                className="w-full rounded-xl object-contain aspect-square"
               />
             </div>
           </div>

@@ -9,7 +9,7 @@ export function HomeAbout() {
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div>
             <Image
-              src="/SatishChandra.jpeg"
+              src="https://res.cloudinary.com/dyb4kpthp/image/upload/v1756294319/satish-02_bnipa3.jpg"
               alt="Satish Chandra Rajasekhariah"
               width={600}
               height={600}
@@ -29,7 +29,9 @@ export function HomeAbout() {
               dedicate my time to what I love most: helping others grow.
             </p>
             <Link href="/my-story">
-              <Button variant="outline">Read my full story</Button>
+              <Button variant="outline" className="cursor-pointer">
+                Read my full story
+              </Button>
             </Link>
           </div>
         </div>

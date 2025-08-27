@@ -143,11 +143,11 @@ export default function Page() {
 
             <div className="order-first md:order-last md:sticky top-24">
               <Image
-                src="/SatishChandra.jpeg"
+                src="https://res.cloudinary.com/dyb4kpthp/image/upload/v1756294319/satish-03_mo09hx.jpg"
                 alt="Satish Chandra Rajasekhariah portrait"
                 width={700}
-                height={700}
-                className="rounded-xl object-contain w-full aspect-square"
+                height={900}
+                className="rounded-xl object-contain w-full overflow-hidden bg-muted"
               />
             </div>
           </div>

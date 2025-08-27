@@ -1,14 +1,17 @@
-import { Card } from "@/components/ui/card"
+import { Card } from "@/components/ui/card";
 
 type Props = {
-  title?: string
-  youtubeId?: string
-}
+  title?: string;
+  youtubeId?: string;
+};
 
-export function VideoCard({ title = "Video title", youtubeId = "dQw4w9WgXcQ" }: Props) {
-  const src = `https://www.youtube.com/embed/${youtubeId}?rel=0`
+export function VideoCard({
+  title = "Video title",
+  youtubeId = "dQw4w9WgXcQ",
+}: Props) {
+  const src = `https://www.youtube.com/embed/${youtubeId}?rel=0`;
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden pt-0">
       <div className="aspect-video">
         <iframe
           title={title}
@@ -23,5 +26,5 @@ export function VideoCard({ title = "Video title", youtubeId = "dQw4w9WgXcQ" }: 
         <h3 className="text-sm font-medium">{title}</h3>
       </div>
     </Card>
-  )
+  );
 }
