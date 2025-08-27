@@ -25,7 +25,8 @@ export function SiteHeader() {
           <Image
             src="/logo.jpg"
             alt="Recharge My Career"
-            width={32}
+            className="object-contain object-center"
+            width={140}
             height={32}
           />
         </Link>
