@@ -26,7 +26,7 @@ export function HomeHero() {
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="mailto:hello@example.com"
-                  className="w-full sm:w-auto"
+                  className="w-full sm:w-auto hidden"
                 >
                   <Button className="w-full cursor-pointer">
                     Book a consultation

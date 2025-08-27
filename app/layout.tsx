@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://res.cloudinary.com/dyb4kpthp/image/upload/v1756294318/satish-01_dqzngx.jpg",
+        url: "https://res.cloudinary.com/dyb4kpthp/image/upload/f_auto,q_auto/v1756294318/satish-01_dqzngx.jpg",
       },
     ],
   },

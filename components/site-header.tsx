@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Briefcase, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const NAV = [
   { name: "Home", href: "/" },
@@ -21,9 +22,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <Briefcase className="h-5 w-5" aria-hidden="true" />
-          <span className="font-medium">Recharge My Career</span>
-          <span className="sr-only">Home</span>
+          <Image
+            src="/logo.jpg"
+            alt="Recharge My Career"
+            width={32}
+            height={32}
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -37,7 +41,7 @@ export function SiteHeader() {
               {item.name}
             </Link>
           ))}
-          <Link href="mailto:hello@example.com">
+          <Link href="mailto:hello@example.com" className="hidden">
             <Button size="sm">Book a call</Button>
           </Link>
         </nav>
@@ -76,7 +80,11 @@ export function SiteHeader() {
               {item.name}
             </Link>
           ))}
-          <Link href="mailto:hello@example.com" onClick={() => setOpen(false)}>
+          <Link
+            href="mailto:hello@example.com"
+            onClick={() => setOpen(false)}
+            className="hidden"
+          >
             <Button className="w-full">Book a call</Button>
           </Link>
         </nav>
