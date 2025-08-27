@@ -4,7 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { ContactCta } from "@/components/contact-cta";
 
 export const metadata: Metadata = {
-  title: "My Story — Career Strategising",
+  title: "My Story — Recharge My Career",
+  description: "Satish's journey from IT leadership to coaching.",
 };
 
 export default function Page() {

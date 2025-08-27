@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Briefcase, Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Briefcase, Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const NAV = [
   { name: "Home", href: "/" },
@@ -12,17 +12,17 @@ const NAV = [
   { name: "Services", href: "/services" },
   { name: "Videos", href: "/videos" },
   { name: "Blog", href: "/blog" },
-]
+];
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Briefcase className="h-5 w-5" aria-hidden="true" />
-          <span className="font-medium">Career Strategising</span>
+          <span className="font-medium">Recharge My Career</span>
           <span className="sr-only">Home</span>
         </Link>
 
@@ -62,7 +62,7 @@ export function SiteHeader() {
         id="mobile-nav"
         className={cn(
           "md:hidden border-t px-4 transition-[max-height] overflow-hidden",
-          open ? "max-h-96 py-4" : "max-h-0",
+          open ? "max-h-96 py-4" : "max-h-0"
         )}
       >
         <nav className="grid gap-2">
@@ -82,5 +82,5 @@ export function SiteHeader() {
         </nav>
       </div>
     </header>
-  )
+  );
 }

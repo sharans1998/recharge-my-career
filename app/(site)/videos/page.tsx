@@ -3,7 +3,9 @@ import { VideoCard } from "@/components/video-card";
 import { ContactCta } from "@/components/contact-cta";
 
 export const metadata: Metadata = {
-  title: "Videos — Career Strategising",
+  title: "Videos — Recharge My Career",
+  description:
+    "A collection of insightful videos to support your career journey.",
 };
 
 const videos = [

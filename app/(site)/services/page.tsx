@@ -1,22 +1,23 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Check, Target, Rocket, Gauge, Handshake } from "lucide-react"
-import Link from "next/link"
-import { ContactCta } from "@/components/contact-cta"
+import type React from "react";
+import type { Metadata } from "next";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Check, Target, Rocket, Gauge, Handshake } from "lucide-react";
+import Link from "next/link";
+import { ContactCta } from "@/components/contact-cta";
 
 export const metadata: Metadata = {
-  title: "Services — Career Strategising",
-}
+  title: "Services — Recharge My Career",
+  description: "Tailored coaching services to empower your career journey.",
+};
 
 type Service = {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  title: string
-  desc: string
-  bullets: string[]
-  meta?: string
-}
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  desc: string;
+  bullets: string[];
+  meta?: string;
+};
 
 const services: Service[] = [
   {
@@ -71,52 +72,64 @@ const services: Service[] = [
     ],
     meta: "Format: Individual or cohort • Duration: tailored",
   },
-]
+];
 
 export default function Page() {
   return (
     <>
-    <section className="w-full py-12 md:py-20">
-      <div className="container mx-auto max-w-6xl px-4 md:px-6">
-        <div className="mb-10 space-y-3 text-center">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Services</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Clear, outcome‑focused coaching for leaders. Choose the support that matches your context.
-          </p>
-        </div>
+      <section className="w-full py-12 md:py-20">
+        <div className="container mx-auto max-w-6xl px-4 md:px-6">
+          <div className="mb-10 space-y-3 text-center">
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Services
+            </h1>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Clear, outcome‑focused coaching for leaders. Choose the support
+              that matches your context.
+            </p>
+          </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-          {services.map((s) => {
-            const Icon = s.icon
-            return (
-              <Card key={s.title} className="h-full flex flex-col">
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-md border p-2">
-                      <Icon className="h-5 w-5" aria-hidden="true" />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            {services.map((s) => {
+              const Icon = s.icon;
+              return (
+                <Card key={s.title} className="h-full flex flex-col">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-md border p-2">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </div>
+                      <CardTitle className="text-lg">{s.title}</CardTitle>
                     </div>
-                    <CardTitle className="text-lg">{s.title}</CardTitle>
-                  </div>
-                  <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
-                  {s.meta ? <p className="mt-2 text-xs text-muted-foreground">{s.meta}</p> : null}
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <ul className="space-y-2">
-                    {s.bullets.map((b) => (
-                      <li key={b} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <Check className="h-4 w-4 mt-0.5 shrink-0" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )
-          })}
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      {s.desc}
+                    </p>
+                    {s.meta ? (
+                      <p className="mt-2 text-xs text-muted-foreground">
+                        {s.meta}
+                      </p>
+                    ) : null}
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <ul className="space-y-2">
+                      {s.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="text-sm text-muted-foreground flex items-start gap-2"
+                        >
+                          <Check className="h-4 w-4 mt-0.5 shrink-0" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
-    <ContactCta />
+      </section>
+      <ContactCta />
     </>
-  )
+  );
 }

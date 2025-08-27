@@ -1,18 +1,24 @@
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import './globals.css'
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-}
+  title: "Recharge My Career",
+  description: "Empowering professionals to take charge of their career paths.",
+  openGraph: {
+    images: [
+      {
+        url: "https://res.cloudinary.com/dyb4kpthp/image/upload/v1756294318/satish-01_dqzngx.jpg",
+      },
+    ],
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -27,5 +33,5 @@ html {
       </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }

@@ -1,18 +1,18 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
+import type React from "react";
+import type { Metadata } from "next";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
-  title: "Career Strategising — Elevate Your Career with Clarity",
+  title: "Recharge My Career",
   description:
-    "A smart, minimal landing site for a consultancy specializing in career strategy, clarity, and execution.",
-}
+    "A coach, guide, and thinking partner for people at turning points",
+};
 
 export default function SiteLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <div className="min-h-dvh flex flex-col bg-background text-foreground">
@@ -20,5 +20,5 @@ export default function SiteLayout({
       <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>
-  )
+  );
 }

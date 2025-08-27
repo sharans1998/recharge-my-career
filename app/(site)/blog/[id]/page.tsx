@@ -15,7 +15,8 @@ export async function generateMetadata({
     return notFound();
   }
   return {
-    title: `${post.title} — Career Strategising`,
+    title: `${post.title} — Recharge My Career`,
+    description: post.excerpt,
   };
 }
 
