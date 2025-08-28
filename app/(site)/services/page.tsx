@@ -1,10 +1,7 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Check, Target, Rocket, Gauge, Handshake } from "lucide-react";
-import Link from "next/link";
-import { ContactCta } from "@/components/contact-cta";
 
 export const metadata: Metadata = {
   title: "Services — Recharge My Career",
@@ -129,7 +126,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <ContactCta />
     </>
   );
 }

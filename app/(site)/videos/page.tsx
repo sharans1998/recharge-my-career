@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { VideoCard } from "@/components/video-card";
-import { ContactCta } from "@/components/contact-cta";
 
 export const metadata: Metadata = {
   title: "Videos — Recharge My Career",
@@ -51,7 +50,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <ContactCta />
     </>
   );
 }
