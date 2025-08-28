@@ -1,34 +1,10 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { useToast } from "@/hooks/use-toast"
+import EmailCaptureForm from "./email-capture-form";
 import { Mail } from "lucide-react"
 
 export function ContactCta() {
-  const [email, setEmail] = useState("")
-  const { toast } = useToast()
-
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    toast({
-      title: "Thanks for reaching out",
-      description: "Your download will start shortly.",
-    })
-    setEmail("")
-
-    // Trigger the PDF download
-    const link = document.createElement("a")
-    link.href = "/Career Recharge Document.pdf"
-    link.download = "Career Recharge Document.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
-
   return (
     <section className="w-full border-t">
       <div className="container mx-auto px-4 md:px-6 py-20 md:py-24">
@@ -46,19 +22,9 @@ export function ContactCta() {
               see the big picture clearly and move forward with confidence.
             </p>
           </div>
-          <form onSubmit={onSubmit} className="flex w-full flex-col gap-3 sm:flex-row">
-            <Input
-              type="email"
-              required
-              placeholder="you@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              aria-label="Email address"
-            />
-            <Button type="submit" className="whitespace-nowrap">
-              Start the conversation
-            </Button>
-          </form>
+          <div className="w-full">
+            <EmailCaptureForm />
+          </div>
         </div>
       </div>
     </section>
