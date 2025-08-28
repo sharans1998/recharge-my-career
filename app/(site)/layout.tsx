@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactCta } from "@/components/contact-cta";
+import { ScrollAnimate } from "@/components/scroll-animate";
 
 export const metadata: Metadata = {
   title: "Recharge My Career",
@@ -19,7 +20,9 @@ export default function SiteLayout({
     <div className="min-h-dvh flex flex-col bg-background text-foreground">
       <SiteHeader />
       <main className="flex-1">{children}</main>
-      <ContactCta />
+      <ScrollAnimate>
+        <ContactCta />
+      </ScrollAnimate>
       <SiteFooter />
     </div>
   );
